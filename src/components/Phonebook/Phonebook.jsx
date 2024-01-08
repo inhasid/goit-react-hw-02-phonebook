@@ -3,6 +3,7 @@ import { nanoid } from "nanoid";
 
 import ContactForm from "./ContactForm/ContactForm";
 import ContactList from "./ContactList/ContactList";
+import FilterInput from "./ContactFiltr/ContactFiltr";
 
 import styles from "./phonebook.module.css";
 
@@ -91,7 +92,7 @@ class Phonebook extends Component {
                 <h1>Phonebook</h1>
                 <ContactForm onSubmit={addContact} />
                 <h2>Contacts</h2>
-                <input onChange={changeFilter} name="filter" placeholder="Search" className={styles.input} />
+                <FilterInput onChange={changeFilter} value={this.state.filter} />
                 <ContactList items={contacts} deleteContact={deleteContact} />
             </div>
         )
